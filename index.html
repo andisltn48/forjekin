@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ILOVEU</title>
+    <link rel="stylesheet" href="bulma.css" />
+    <style>
+        .title, h1{
+            text-align: center;
+        }
+        .subtitle{
+            padding-top: 8vh;
+            text-align: center;
+        }
+        video {
+            padding-left: 27vw;
+            max-width: 55vw;
+        }
+        .buttons {
+            padding-left: 35vw;
+        }
+        #main-content{
+            display: none;
+        }
+        .fotowendi, p{
+            padding-top: 10px;
+            padding-left: 2.5vw;
+        }
+        .fotowendi{
+            padding-left: 33vw;
+        }
+        .quotes {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body></body>
+    <section>
+            <div class="container">
+                <div class="title">
+                    <h1>Hello Jekinnnnnn ngeselinnn, JANGAN BOBO TERUS YA KAMUUU.</h1>
+                </div>
+                <div class="subtitle">
+                    <p>Mukamu pas kan di kamera ya (kalau bisa sambil senyum jengg), terus pencet tombol dibawah</p>
+                </div>
+                <div class="camera">
+                    <video id="player" autoplay></video>
+                </div>
+                <div class="buttons">
+                    <button class="button is-link is-rounded " onclick="clickFunction()">Pencet ini cok</button>
+                </div>
+                <div id="main-content">
+                    <div class="fotowendi">
+                        <img src="wendi.jpeg" alt="" width="200px">
+                        <p><u>Image 1.1 Princess</u></p>
+                    </div>
+                    <div class="quotes">
+                        <p>I don't know why I could fall in love with you, it just happened. but if you need a reason, I will tell you the reason I love you, because you are kind, funny, beautiful, cute, and smart, like her (image 1.1).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script> 
+      var player = document.getElementById('player');
+    
+      var handleSuccess = function(stream) {
+        player.srcObject = stream;
+      };
+    
+        navigator.mediaDevices.getUserMedia({video: true})
+            .then(handleSuccess);
+      function clickFunction() {
+        var x = document.getElementById("main-content");
+        if (x.style.display == "block") {
+            x.style.display = "none";
+        } 
+        else {
+            x.style.display = "block";
+        }
+      } 
+    </script>
+</body>
+</html>
